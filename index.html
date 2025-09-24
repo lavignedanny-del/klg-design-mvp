@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KLG Design – 3D Vanity Builder (MVP)</title>
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --panel: #121820;
+        --panel-2: #0f141b;
+        --text: #e6e6e6;
+        --muted: #a0a8b3;
+        --accent: #6ea8fe;
+        --success: #6df0c2;
+        --danger: #ff8e8e;
+      }
+      * { box-sizing: border-box; }
+      html, body, #root { height: 100%; margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; }
+      .app { display: grid; grid-template-columns: 340px 1fr; height: 100%; }
+      .sidebar { background: linear-gradient(180deg, var(--panel), var(--panel-2)); padding: 16px; border-right: 1px solid #1f2937; overflow: auto; }
+      h1 { font-size: 18px; margin: 0 0 6px 0; letter-spacing: .3px; }
+      .brand { font-weight: 800; letter-spacing: .8px; }
+      .muted { color: var(--muted); font-size: 12px; }
+      .section { margin-top: 18px; }
+      .row { display: grid; grid-template-columns: 1fr 110px; gap: 8px; align-items: center; margin: 10px 0; }
+      .row > label { font-size: 13px; color: var(--muted); }
+      input[type=number], select, button, .btn {
+        background: #0e131a; color: var(--text); border: 1px solid #253042; border-radius: 8px; padding: 8px 10px; font-size: 13px;
+      }
+      input[type=number] { width: 100%; }
+      .btn { display: inline-block; cursor: pointer; text-align: center; }
+      .btn.primary { background: #152033; border-color: #2a3b55; }
+      .btn.ghost { background: transparent; border-color: #2a3b55; }
+      .btn.full { width: 100%; }
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .price { font-size: 22px; font-weight: 700; margin-top: 8px; }
+      .canvas-wrap { position: relative; background: #0a0f15; }
+      .topbar { position: absolute; top: 10px; right: 10px; display: flex; gap: 8px; z-index: 2; }
+      .badge { padding: 3px 8px; border-radius: 999px; font-size: 11px; background: #162338; border: 1px solid #2a3b55; }
+      .toast { position: fixed; bottom: 16px; right: 16px; background: #111827; border: 1px solid #374151; padding: 10px 14px; border-radius: 10px; font-size: 13px; }
+      .loading { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient( 1000px 600px at 50% -10%, rgba(110,168,254,0.08), transparent 60%), var(--bg); z-index: 10; }
+      .spinner { width: 26px; height: 26px; border: 3px solid #2a3b55; border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 14px auto 0; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .logo { font-size: 20px; font-weight: 900; letter-spacing: 1.2px; }
+      .sub { font-size: 12px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
