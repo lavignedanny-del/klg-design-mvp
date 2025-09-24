@@ -268,15 +268,4 @@ function App() {
   )
 }
 
-function useLocalStorage(key, initial) {
-  const [state, setState] = React.useState(() => {
-    try {
-      const raw = localStorage.getItem(key)
-      return raw ? JSON.parse(raw) : initial
-    } catch { return initial }
-  })
-  React.useEffect(() => { localStorage.setItem(key, JSON.stringify(state)) }, [key, state])
-  return [state, setState]
-}
-
 export default App
